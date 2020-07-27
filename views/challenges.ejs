@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges</title>
+</head>
+<body>
+    <%- include("partials/nav-loggedIn.ejs") %>
+    <h1>All challenges</h1>
+    <% if (challenges.length > 0) { %>
+        <% for (let challenge of challenges) { %>
+            <a href="/challenges/<%= challenge._id %>">
+                <p><%= challenge.challengeDescription %></p>
+            </a>
+        <% } %>
+    <% } else { %>
+        <h2>There are no challenges to display.</h2>
+    <% } %>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

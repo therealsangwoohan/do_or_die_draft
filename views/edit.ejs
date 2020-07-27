@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit a challenge</title>
+</head>
+<body>
+    <%- include("partials/nav-loggedIn.ejs") %>
+    <h1>Edit a challenge</h1>
+    <div class="createChallenge">
+        <form action="/challenge/edit/<%= challenge._id %>" method="POST">
+            <label>Challenge Description</label>
+            <br>
+            <textarea name="challengeDescription" id="challengeDescription" required><%= challenge.challengeDescription %></textarea>
+            <br>
+            <button>Save changes</button>
+        </form>
+    </div>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
